@@ -93,12 +93,12 @@ export default function Home(){
    {atlas&&<AnatomyScene atlas={atlas} state={{...state,inspectorOpen:false}} simulation={simulation} onSelect={onSelect} onPoint={choosePoint} onSurface={onSurface} onToolDrag={onToolDrag} onProgress={onProgress} onError={onError}/>}
    <div className="scene-guide"><span className="guide-cross">+</span><span>成人男性 · 体表参考</span></div>
    {(progress<100||error)&&<div className={`loading-card ${error?'load-error':''}`} role="status"><span className="loading-symbol">{error?<Info size={23}/>:<Layers3 size={23}/>}</span><strong>{error?'模型暂未就绪':'正在加载人体解剖'}</strong><p>{error||'正在准备真实解剖结构与教学点。'}</p>{!error&&<><div className="load-track"><i style={{width:`${progress}%`}}/></div><small>{progress}%</small></>}{error&&<button className="text-button" onClick={()=>window.location.reload()}>重新加载</button>}</div>}
-   <div className={`scene-mode-hint ${simulation.pickMode==='pain'?'pain-hint':''}`}><span className="tiny-dot"/>{state.explode>0?'结构拆解中 · 穴位与操作示意暂时隐藏':simulation.pain?'红色：痛处 · 金色：局部 · 蓝色：远端 · 虚线仅表示关联':simulation.pickMode==='pain'?'点选人体上的痛处，或选择课堂示例':simulation.pickMode==='anatomy'?'点击解剖结构，观察层次关系':'抓住工具移动 · 拖动其他位置旋转 · 滚动缩放'}</div>
+   <div className={`scene-mode-hint ${simulation.pickMode==='pain'?'pain-hint':''}`}><span className="tiny-dot"/>{simulation.pain?'红色：痛处 · 金色：局部 · 蓝色：远端 · 虚线仅表示关联':simulation.pickMode==='pain'?'点选人体上的痛处，或选择课堂示例':simulation.pickMode==='anatomy'?'点击解剖结构，观察层次关系':'抓住工具移动 · 拖动其他位置旋转 · 滚动缩放'}</div>
   </section>
 
   <nav className="camera-bar surface" aria-label="人体视角">
-   {(['front','back','side','three-quarter'] as View[]).map(view=><button key={view} className={state.view===view?'selected':''} aria-pressed={state.view===view} onClick={()=>changeView(view)} disabled={state.explode>.8&&view!=='front'}>{VIEW_LABELS[view]}</button>)}
-   <span className="control-divider"/><button onClick={fullBody} title="显示全身"><Maximize2 size={14}/><span>全身</span></button><button onClick={focusTarget} disabled={!hasTarget} title="聚焦当前穴位或痛处"><Focus size={14}/><span>聚焦</span></button><button className={`icon-button ${state.rotate?'selected':''}`} aria-label={state.rotate?'停止旋转':'自动旋转'} aria-pressed={state.rotate} disabled={state.explode>0} onClick={()=>{pause();setState(s=>({...s,rotate:!s.rotate}));setFeedback(state.rotate?'自动旋转已停止。':'正在自动旋转人体。');}}><RotateCw size={15}/></button>
+   {(['front','back','side','three-quarter'] as View[]).map(view=><button key={view} className={state.view===view?'selected':''} aria-pressed={state.view===view} onClick={()=>changeView(view)}>{VIEW_LABELS[view]}</button>)}
+   <span className="control-divider"/><button onClick={fullBody} title="显示全身"><Maximize2 size={14}/><span>全身</span></button><button onClick={focusTarget} disabled={!hasTarget} title="聚焦当前穴位或痛处"><Focus size={14}/><span>聚焦</span></button><button className={`icon-button ${state.rotate?'selected':''}`} aria-label={state.rotate?'停止旋转':'自动旋转'} aria-pressed={state.rotate} onClick={()=>{pause();setState(s=>({...s,rotate:!s.rotate}));setFeedback(state.rotate?'自动旋转已停止。':'正在自动旋转人体。');}}><RotateCw size={15}/></button>
   </nav>
 
   <button className={`pain-entry ${simulation.pain||simulation.pickMode==='pain'?'active':''}`} aria-pressed={!!simulation.pain||simulation.pickMode==='pain'} onClick={()=>{changeMode('pain');setMobilePanel('selection');}}>◎ 疼痛关联</button>
@@ -120,7 +120,6 @@ export default function Home(){
      <details className="anatomy-details"><summary>取穴参考 · 辅助解剖<span>15 层</span></summary><div className="system-list">{SYSTEMS.map(s=><label className={`system-row ${state.visible.includes(s.id)?'enabled':''}`} key={s.id}><span className="system-dot" style={{background:s.color}}/><span className="system-label">{SYSTEM_ZH[s.id]}</span><span className="system-count">{counts[s.id]||0}</span><input type="checkbox" checked={state.visible.includes(s.id)} onChange={()=>toggleLayer(s.id)} aria-label={`显示${SYSTEM_ZH[s.id]}`}/><span className="switch-track" aria-hidden="true"/></label>)}</div></details>
      <div className="point-list-foot"><span>{visibleCount.toLocaleString()} 个结构可见</span><button className="text-button" onClick={()=>preset([],'全部隐藏')}>隐藏全部</button></div>
     </div>}
-    <div className="explode-control"><label htmlFor="explode"><span><Layers3 size={14}/>结构拆解</span><output>{state.explode===0?'完整人体':`${Math.round(state.explode*100)}%`}</output></label><input id="explode" type="range" min="0" max="1" step="0.01" value={state.explode} onChange={e=>{const value=Number(e.target.value);pause(value>0?'正在拆解解剖结构；操作演示与点位叠加暂时隐藏。':'已恢复完整人体，可继续教学演示。');setState(s=>({...s,explode:value,rotate:false,isolate:false}));}} aria-valuetext={state.explode===0?'完整人体':`结构拆解 ${Math.round(state.explode*100)}%`}/></div>
    </div>
   </aside>
 

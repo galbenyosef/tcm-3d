@@ -27,3 +27,9 @@ Earlier repository revisions included female reference anatomy: Kristen Browne a
 Adaptations: translated native meter/Y-up coordinates onto the stage, coincident vertices welded and source normals averaged, geometry simplified with a 0.2% per-structure relative error bound, and normals quantized. Colors and display systems are curated for this interface. All 888 source meshes are represented, with 1,073 source nodes available as selectable individual or compound concepts.
 
 This is a reference assembly with whole-body surface and selected organs, including female reproductive anatomy. Its skeleton and muscle coverage is partial. It is not a complete model of every human structure or a single-person scan. Eight placenta/umbilical structures are classified under Pregnancy reference and hidden by default.
+
+## 中医教学台的代码适配
+
+本地中医教学界面基于 ashemag / Human Atlas（MIT）改编。原始代码版权声明和许可全文见 [CODE-LICENSE.txt](CODE-LICENSE.txt)，代码来源：https://github.com/ashemag/human-atlas 。
+
+本项目新增中文界面、穴位工程覆盖层、六种工具几何、肤色/程序纹理、皮肤接触反应示意及教学控制。上述视觉适配没有完成医学逐穴定位校核，也没有改变人体数据的独立 CC BY 4.0 许可。

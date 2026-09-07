@@ -1,0 +1,1934 @@
+[
+  {
+    "code": "LU5",
+    "name": "尺泽",
+    "pinyin": "Chize",
+    "meridian": "手太阴肺经",
+    "position": [
+      0.234,
+      1.113,
+      0.005575
+    ],
+    "normal": [
+      0.023773,
+      0.124974,
+      0.991875
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；肱骨远端及桡骨近端交界 y≈1.113；肱二头肌在此高度 x≈0.2176，将工程点置其桡侧 x=0.234，并向前侧皮肤作短射线。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.22633,
+      1.054603,
+      0.052971
+    ],
+    "uncertainty": "未识别肘横纹及肱二头肌腱精确边缘，伸肘参考模型不能替代屈肘取穴体位。",
+    "landmarks": [
+      {
+        "meshId": "FJ3262",
+        "name": "Left humerus",
+        "bounds": [
+          [
+            0.140073,
+            1.1073212,
+            -0.048944100000000004
+          ],
+          [
+            0.24076,
+            1.4146311999999999,
+            0.0002289999999999931
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3277",
+        "name": "Left radius",
+        "bounds": [
+          [
+            0.219836,
+            0.8842742000000001,
+            -0.03853070000000001
+          ],
+          [
+            0.279143,
+            1.1131212,
+            0.027252
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ1478M",
+        "name": "Long head of left biceps brachii",
+        "bounds": [
+          [
+            0.135268,
+            1.0721832,
+            -0.032191100000000014
+          ],
+          [
+            0.22986,
+            1.4175312,
+            0.00929300000000001
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 40590,
+      "localReference": [
+        0.234,
+        1.113,
+        0.015
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.009425,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "LU7",
+    "name": "列缺",
+    "pinyin": "Lieque",
+    "meridian": "手太阴肺经",
+    "position": [
+      0.280898,
+      0.916,
+      0.010759
+    ],
+    "normal": [
+      0.982192,
+      0.162926,
+      0.093562
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；桡骨远端下界 y=0.88427；腕部工程参考 y≈0.887，在其近端约0.03米，置桡侧并沿外侧法线投射皮肤。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.242703,
+      0.813826,
+      0.062602
+    ],
+    "uncertainty": "腕上分寸为肘腕局部比例近似，尚未复核肌腱交点、桡骨茎突及标准体位。",
+    "landmarks": [
+      {
+        "meshId": "FJ3277",
+        "name": "Left radius",
+        "bounds": [
+          [
+            0.219836,
+            0.8842742000000001,
+            -0.03853070000000001
+          ],
+          [
+            0.279143,
+            1.1131212,
+            0.027252
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ1487M",
+        "name": "Left brachioradialis",
+        "bounds": [
+          [
+            0.20815899999999998,
+            0.8878232,
+            -0.04417560000000001
+          ],
+          [
+            0.280586,
+            1.2257212,
+            0.022877999999999996
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ1484M",
+        "name": "Left abductor pollicis longus",
+        "bounds": [
+          [
+            0.227545,
+            0.8668602000000001,
+            -0.029950599999999994
+          ],
+          [
+            0.289429,
+            1.0488861999999999,
+            0.03177699999999997
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 43236,
+      "localReference": [
+        0.274,
+        0.916,
+        0.008
+      ],
+      "outwardDirection": [
+        1,
+        0,
+        0.4
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.00743,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "LU9",
+    "name": "太渊",
+    "pinyin": "Taiyuan",
+    "meridian": "手太阴肺经",
+    "position": [
+      0.273,
+      0.887,
+      0.041309
+    ],
+    "normal": [
+      0.006466,
+      0.548036,
+      0.83643
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；桡骨远端与舟骨关节区在 y≈0.887；桡侧 x≈0.273，使用掌侧 +Z 皮肤命中，避免旧点落到掌骨远端。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.244629,
+      0.775302,
+      0.064528
+    ],
+    "uncertainty": "腕横纹和桡动脉侧缘尚未精确标注；只纠正到桡侧掌腕区域。",
+    "landmarks": [
+      {
+        "meshId": "FJ3277",
+        "name": "Left radius",
+        "bounds": [
+          [
+            0.219836,
+            0.8842742000000001,
+            -0.03853070000000001
+          ],
+          [
+            0.279143,
+            1.1131212,
+            0.027252
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3278",
+        "name": "Left scaphoid",
+        "bounds": [
+          [
+            0.249452,
+            0.8743312000000001,
+            0.011526999999999996
+          ],
+          [
+            0.27297699999999997,
+            0.8897932000000001,
+            0.026443999999999995
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ2242",
+        "name": "Left radial artery",
+        "bounds": [
+          [
+            0.213611,
+            0.8692972000000001,
+            -0.016849000000000003
+          ],
+          [
+            0.279507,
+            1.1025612,
+            0.027126999999999984
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 42803,
+      "localReference": [
+        0.273,
+        0.887,
+        0.039
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.002309,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "LI4",
+    "name": "合谷",
+    "pinyin": "Hegu",
+    "meridian": "手阳明大肠经",
+    "position": [
+      0.286,
+      0.831,
+      0.014138
+    ],
+    "normal": [
+      0.262411,
+      -0.267398,
+      -0.927167
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；第二掌骨 bounds y=0.79715–0.86498；中段网格采样约[0.28213,0.82978,0.02824]，选其桡侧 x=0.286、y=0.831，并投射手背 -Z。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.246556,
+      0.707884,
+      0.038524
+    ],
+    "uncertainty": "掌骨中段和桡侧偏移为工程近似；本次没有以屈拇姿势或专家触诊定位。",
+    "landmarks": [
+      {
+        "meshId": "FJ3243",
+        "name": "Left second metacarpal bone",
+        "bounds": [
+          [
+            0.261841,
+            0.7971532000000001,
+            0.017117000000000007
+          ],
+          [
+            0.292613,
+            0.8649802000000001,
+            0.042433
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3240",
+        "name": "Left first metacarpal bone",
+        "bounds": [
+          [
+            0.272353,
+            0.8384062,
+            0.023405999999999996
+          ],
+          [
+            0.309625,
+            0.8755182000000001,
+            0.053781999999999996
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 43437,
+      "localReference": [
+        0.286,
+        0.831,
+        0.01
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        -1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.004138,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "LI11",
+    "name": "曲池",
+    "pinyin": "Quchi",
+    "meridian": "手阳明大肠经",
+    "position": [
+      0.264694,
+      1.118,
+      -0.022
+    ],
+    "normal": [
+      0.888286,
+      0.261699,
+      0.37744
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；肱骨远端在 y≈1.118 的外侧骨面 x最高约0.23867，点沿 +X 投射至肘外侧皮肤。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.235961,
+      1.059418,
+      0.0
+    ],
+    "uncertainty": "未复核屈肘90度时肘横纹外端；不能把外上髁骨面投影当作完整标准定位。",
+    "landmarks": [
+      {
+        "meshId": "FJ3262",
+        "name": "Left humerus",
+        "bounds": [
+          [
+            0.140073,
+            1.1073212,
+            -0.048944100000000004
+          ],
+          [
+            0.24076,
+            1.4146311999999999,
+            0.0002289999999999931
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3277",
+        "name": "Left radius",
+        "bounds": [
+          [
+            0.219836,
+            0.8842742000000001,
+            -0.03853070000000001
+          ],
+          [
+            0.279143,
+            1.1131212,
+            0.027252
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 42430,
+      "localReference": [
+        0.247,
+        1.118,
+        -0.022
+      ],
+      "outwardDirection": [
+        1,
+        0,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.017694,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "LI15",
+    "name": "肩髃",
+    "pinyin": "Jianyu",
+    "meridian": "手阳明大肠经",
+    "position": [
+      0.206116,
+      1.405,
+      -0.005721
+    ],
+    "normal": [
+      0.664856,
+      0.662975,
+      0.344138
+    ],
+    "region": "shoulder",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；肩胛骨肩峰区域上界 y≈1.428、肱骨近端上界≈1.415，工程点置肩外侧前部 y=1.405，沿外前方向投射。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.204179,
+      1.377244,
+      0.009631
+    ],
+    "uncertainty": "缺少外展肩姿态及肩峰前下凹陷标志；仅纠正表面和局部区域。",
+    "landmarks": [
+      {
+        "meshId": "FJ3279",
+        "name": "Left scapula",
+        "bounds": [
+          [
+            0.0570614,
+            1.2620612,
+            -0.1050764
+          ],
+          [
+            0.166464,
+            1.4279711999999998,
+            0.0028450000000000003
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3262",
+        "name": "Left humerus",
+        "bounds": [
+          [
+            0.140073,
+            1.1073212,
+            -0.048944100000000004
+          ],
+          [
+            0.24076,
+            1.4146311999999999,
+            0.0002289999999999931
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 39509,
+      "localReference": [
+        0.193,
+        1.405,
+        -0.009
+      ],
+      "outwardDirection": [
+        1,
+        0,
+        0.25
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.01352,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "ST2",
+    "name": "四白",
+    "pinyin": "Sibai",
+    "meridian": "足阳明胃经",
+    "position": [
+      0.035635,
+      1.579496,
+      0.112684
+    ],
+    "normal": [
+      0,
+      0,
+      1
+    ],
+    "region": "head",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "现有铜人示意坐标经整体尺度转换，仅供交互验证，未经过专家定位复核。",
+    "source": "https://tcm.jic.io/bronzeman"
+  },
+  {
+    "code": "ST25",
+    "name": "天枢",
+    "pinyin": "Tianshu",
+    "meridian": "足阳明胃经",
+    "position": [
+      0.048155,
+      1.020894,
+      0.110757
+    ],
+    "normal": [
+      0,
+      0,
+      1
+    ],
+    "region": "abdomen",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "现有铜人示意坐标经整体尺度转换，仅供交互验证，未经过专家定位复核。",
+    "source": "https://tcm.jic.io/bronzeman"
+  },
+  {
+    "code": "ST35",
+    "name": "犊鼻",
+    "pinyin": "Dubi",
+    "meridian": "足阳明胃经",
+    "position": [
+      0.099,
+      0.435,
+      0.026635
+    ],
+    "normal": [
+      0.496775,
+      -0.33571,
+      0.800321
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；髌骨下界 y=0.43961，旧点 y=0.48155 高于髌骨顶部；改为髌骨下外侧工程位置 y=0.435，再投射前侧皮肤。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.091495,
+      0.481554,
+      0.072233
+    ],
+    "uncertainty": "髌韧带外缘和屈膝凹陷未建模。",
+    "landmarks": [
+      {
+        "meshId": "FJ3275",
+        "name": "Left patella",
+        "bounds": [
+          [
+            0.0605925,
+            0.4396082,
+            0.000900999999999999
+          ],
+          [
+            0.10222400000000001,
+            0.47887419999999997,
+            0.022751000000000007
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3282",
+        "name": "Left tibia",
+        "bounds": [
+          [
+            0.0350342,
+            0.07201587000000001,
+            -0.0480179
+          ],
+          [
+            0.109455,
+            0.4519732,
+            0.014515
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 33228,
+      "localReference": [
+        0.099,
+        0.435,
+        0.035
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.008365,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "ST36",
+    "name": "足三里",
+    "pinyin": "Zusanli",
+    "meridian": "足阳明胃经",
+    "position": [
+      0.111,
+      0.368,
+      0.014634
+    ],
+    "normal": [
+      0.514298,
+      -0.020019,
+      0.857378
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；从犊鼻工程参考 y≈0.435 向下沿胫骨外侧/胫骨前肌区域选 y≈0.368，约为膝踝局部段的3/16；x=0.111取胫骨外侧皮肤。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.091495,
+      0.423767,
+      0.062602
+    ],
+    "uncertainty": "胫骨前嵴、标准同身寸与膝屈姿态未精确复核；本次只纠正旧点过近膝关节。",
+    "landmarks": [
+      {
+        "meshId": "FJ3282",
+        "name": "Left tibia",
+        "bounds": [
+          [
+            0.0350342,
+            0.07201587000000001,
+            -0.0480179
+          ],
+          [
+            0.109455,
+            0.4519732,
+            0.014515
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ1439M",
+        "name": "Left tibialis anterior",
+        "bounds": [
+          [
+            0.066967,
+            0.03930480000000001,
+            -0.027175400000000002
+          ],
+          [
+            0.116779,
+            0.4333802,
+            0.049600000000000005
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3275",
+        "name": "Left patella",
+        "bounds": [
+          [
+            0.0605925,
+            0.4396082,
+            0.000900999999999999
+          ],
+          [
+            0.10222400000000001,
+            0.47887419999999997,
+            0.022751000000000007
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 33777,
+      "localReference": [
+        0.111,
+        0.368,
+        0.013
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.001634,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "ST41",
+    "name": "解溪",
+    "pinyin": "Jiexi",
+    "meridian": "足阳明胃经",
+    "position": [
+      0.082,
+      0.092401,
+      0.015401
+    ],
+    "normal": [
+      0.30534,
+      0.541235,
+      0.783474
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；距骨上界 y=0.08121、胫骨远端下界 y≈0.072；工程踝前区 y≈0.084，沿前上方向到达皮肤。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.091495,
+      0.125204,
+      0.052971
+    ],
+    "uncertainty": "伸趾/伸拇肌腱之间沟及实际踝横纹未审定。",
+    "landmarks": [
+      {
+        "meshId": "FJ3280",
+        "name": "Left talus",
+        "bounds": [
+          [
+            0.049635399999999996,
+            0.04680560000000001,
+            -0.051186
+          ],
+          [
+            0.09017839999999999,
+            0.08120931,
+            0.0056770000000000015
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3282",
+        "name": "Left tibia",
+        "bounds": [
+          [
+            0.0350342,
+            0.07201587000000001,
+            -0.0480179
+          ],
+          [
+            0.109455,
+            0.4519732,
+            0.014515
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 31631,
+      "localReference": [
+        0.082,
+        0.084,
+        0.007
+      ],
+      "outwardDirection": [
+        0,
+        0.7,
+        0.7
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.011881,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "SP6",
+    "name": "三阴交",
+    "pinyin": "Sanyinjiao",
+    "meridian": "足太阴脾经",
+    "position": [
+      0.04718,
+      0.15,
+      -0.026
+    ],
+    "normal": [
+      -0.892251,
+      0.048501,
+      0.448928
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；胫骨内踝工程高度约0.078，向近端局部比例选 y=0.15，在内侧偏后 x≈0.047,z=-0.026；沿 -X 取皮肤。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.050082,
+      0.192622,
+      0.028893
+    ],
+    "uncertainty": "内踝最高点与胫骨内侧缘尚未单独标注；3寸比例仅工程估计。",
+    "landmarks": [
+      {
+        "meshId": "FJ3282",
+        "name": "Left tibia",
+        "bounds": [
+          [
+            0.0350342,
+            0.07201587000000001,
+            -0.0480179
+          ],
+          [
+            0.109455,
+            0.4519732,
+            0.014515
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 28579,
+      "localReference": [
+        0.047,
+        0.15,
+        -0.026
+      ],
+      "outwardDirection": [
+        -1,
+        0,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.00018,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "SP9",
+    "name": "阴陵泉",
+    "pinyin": "Yinlingquan",
+    "meridian": "足太阴脾经",
+    "position": [
+      0.02896,
+      0.428,
+      -0.015
+    ],
+    "normal": [
+      -0.934962,
+      -0.075854,
+      0.346544
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；胫骨上界 y=0.45197；取内侧髁下方工程高度 y=0.428、内侧 -X 表面，修正旧点位于近膝前侧且法线 +Z 的错误。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.054897,
+      0.462292,
+      0.028893
+    ],
+    "uncertainty": "髁下缘及凹陷未精确分割，不能当作标准取穴结果。",
+    "landmarks": [
+      {
+        "meshId": "FJ3282",
+        "name": "Left tibia",
+        "bounds": [
+          [
+            0.0350342,
+            0.07201587000000001,
+            -0.0480179
+          ],
+          [
+            0.109455,
+            0.4519732,
+            0.014515
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 25959,
+      "localReference": [
+        0.044,
+        0.428,
+        -0.015
+      ],
+      "outwardDirection": [
+        -1,
+        0,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.01504,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "HT7",
+    "name": "神门",
+    "pinyin": "Shenmen",
+    "meridian": "手少阴心经",
+    "position": [
+      0.238,
+      0.884,
+      0.040141
+    ],
+    "normal": [
+      -0.401226,
+      0.495982,
+      0.770078
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；豌豆骨 bounds y=0.86784–0.87939、x=0.23184–0.24003；工程点置其近端、尺侧屈腕肌腱区域，采用掌侧 +Z。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.236924,
+      0.770486,
+      0.046229
+    ],
+    "uncertainty": "腕横纹、尺侧腕屈肌腱桡侧缘及精确凹陷未审定。",
+    "landmarks": [
+      {
+        "meshId": "FJ3276",
+        "name": "Left pisiform",
+        "bounds": [
+          [
+            0.231838,
+            0.8678362000000001,
+            0.027031
+          ],
+          [
+            0.24003,
+            0.8793882000000001,
+            0.037588999999999984
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ1473M",
+        "name": "Humeral head of left flexor carpi ulnaris",
+        "bounds": [
+          [
+            0.17782900000000001,
+            0.8596652,
+            -0.0388307
+          ],
+          [
+            0.246452,
+            1.1264512,
+            0.03657400000000002
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 40852,
+      "localReference": [
+        0.238,
+        0.884,
+        0.039
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.001141,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "SI3",
+    "name": "后溪",
+    "pinyin": "Houxi",
+    "meridian": "手太阳小肠经",
+    "position": [
+      0.224147,
+      0.819,
+      0.031
+    ],
+    "normal": [
+      -0.721282,
+      -0.249643,
+      -0.646088
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；第五掌骨远端截面 y≈0.815，x≈0.23184；在其近端 y=0.819、尺侧 -X 投射皮肤，修正旧点落在指端以下。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.243666,
+      0.693437,
+      0.011557
+    ],
+    "uncertainty": "握拳后的掌横纹末端与赤白肉际未建模，需对应体位复核。",
+    "landmarks": [
+      {
+        "meshId": "FJ3252",
+        "name": "Left fifth metacarpal bone",
+        "bounds": [
+          [
+            0.22527000000000003,
+            0.8101422,
+            0.020224000000000006
+          ],
+          [
+            0.245394,
+            0.8648702,
+            0.04441999999999999
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 40173,
+      "localReference": [
+        0.222,
+        0.819,
+        0.031
+      ],
+      "outwardDirection": [
+        -1,
+        0,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.002147,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "SI11",
+    "name": "天宗",
+    "pinyin": "Tianzong",
+    "meridian": "手太阳小肠经",
+    "position": [
+      0.134835,
+      1.309826,
+      -0.101126
+    ],
+    "normal": [
+      0,
+      0,
+      -1
+    ],
+    "region": "shoulder",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "现有铜人示意坐标经整体尺度转换，仅供交互验证，未经过专家定位复核。",
+    "source": "https://tcm.jic.io/bronzeman"
+  },
+  {
+    "code": "BL13",
+    "name": "肺俞",
+    "pinyin": "Feishu",
+    "meridian": "足太阳膀胱经",
+    "position": [
+      0.033709,
+      1.367613,
+      -0.105942
+    ],
+    "normal": [
+      0,
+      0,
+      -1
+    ],
+    "region": "shoulder",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "现有铜人示意坐标经整体尺度转换，仅供交互验证，未经过专家定位复核。",
+    "source": "https://tcm.jic.io/bronzeman"
+  },
+  {
+    "code": "BL23",
+    "name": "肾俞",
+    "pinyin": "Shenshu",
+    "meridian": "足太阳膀胱经",
+    "position": [
+      0.033709,
+      1.097943,
+      -0.105942
+    ],
+    "normal": [
+      0,
+      0,
+      -1
+    ],
+    "region": "waist",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "现有铜人示意坐标经整体尺度转换，仅供交互验证，未经过专家定位复核。",
+    "source": "https://tcm.jic.io/bronzeman"
+  },
+  {
+    "code": "BL40",
+    "name": "委中",
+    "pinyin": "Weizhong",
+    "meridian": "足太阳膀胱经",
+    "position": [
+      0.081,
+      0.445,
+      -0.095314
+    ],
+    "normal": [
+      0.04884,
+      0.294847,
+      -0.954295
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；股骨下界 y=0.44617、胫骨上界 y=0.45197，膝后关节中区取 y≈0.445并向 -Z 投射。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.08668,
+      0.471923,
+      -0.078975
+    ],
+    "uncertainty": "膝屈姿势的腘横纹与中央凹陷未标注。",
+    "landmarks": [
+      {
+        "meshId": "FJ3259",
+        "name": "Left femur",
+        "bounds": [
+          [
+            0.0319662,
+            0.4461672,
+            -0.05051780000000001
+          ],
+          [
+            0.150237,
+            0.9123502000000001,
+            0.012275999999999995
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3282",
+        "name": "Left tibia",
+        "bounds": [
+          [
+            0.0350342,
+            0.07201587000000001,
+            -0.0480179
+          ],
+          [
+            0.109455,
+            0.4519732,
+            0.014515
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 31407,
+      "localReference": [
+        0.081,
+        0.445,
+        -0.089
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        -1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.006314,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "BL60",
+    "name": "昆仑",
+    "pinyin": "Kunlun",
+    "meridian": "足太阳膀胱经",
+    "position": [
+      0.106329,
+      0.064,
+      -0.057
+    ],
+    "normal": [
+      0.674671,
+      -0.172635,
+      -0.717646
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；腓骨外踝下界 y=0.05292、跟骨后部 z≈-0.076；工程点取外踝后侧 y≈0.064,z=-0.057，法线沿外侧 +X。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.096311,
+      0.081864,
+      -0.024078
+    ],
+    "uncertainty": "外踝尖与跟腱之间精确凹陷尚未审校。",
+    "landmarks": [
+      {
+        "meshId": "FJ3260",
+        "name": "Left fibula",
+        "bounds": [
+          [
+            0.08452899999999999,
+            0.052920600000000005,
+            -0.051466000000000005
+          ],
+          [
+            0.120108,
+            0.43724219999999997,
+            -0.021880999999999998
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3256",
+        "name": "Left calcaneus",
+        "bounds": [
+          [
+            0.04501,
+            0.009694000000000008,
+            -0.0757932
+          ],
+          [
+            0.100768,
+            0.05904000000000001,
+            -0.005858199999999994
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 33411,
+      "localReference": [
+        0.111,
+        0.064,
+        -0.057
+      ],
+      "outwardDirection": [
+        1,
+        0,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.004671,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "KI1",
+    "name": "涌泉",
+    "pinyin": "Yongquan",
+    "meridian": "足少阴肾经",
+    "position": [
+      0.101,
+      0.003072,
+      0.069
+    ],
+    "normal": [
+      -0.056237,
+      -0.99284,
+      -0.105389
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；第二跖骨位于 x≈0.091–0.121、z≈0.022–0.087；取足底前中部 x=0.101,z=0.069，并沿 -Y 射线落到真实足底表面。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.088606,
+      0.003852,
+      0.096311
+    ],
+    "uncertainty": "足长分段端点和屈趾最凹陷尚未建模；不能以此坐标声称涌泉标准定位完成。",
+    "landmarks": [
+      {
+        "meshId": "FJ3244",
+        "name": "Left second metatarsal bone",
+        "bounds": [
+          [
+            0.0905894,
+            0.0119475,
+            0.022488999999999995
+          ],
+          [
+            0.121348,
+            0.059804300000000005,
+            0.087371
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3256",
+        "name": "Left calcaneus",
+        "bounds": [
+          [
+            0.04501,
+            0.009694000000000008,
+            -0.0757932
+          ],
+          [
+            0.100768,
+            0.05904000000000001,
+            -0.005858199999999994
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 32302,
+      "localReference": [
+        0.101,
+        0.008,
+        0.069
+      ],
+      "outwardDirection": [
+        0,
+        -1,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.004928,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "KI3",
+    "name": "太溪",
+    "pinyin": "Taixi",
+    "meridian": "足少阴肾经",
+    "position": [
+      0.035242,
+      0.078,
+      -0.048
+    ],
+    "normal": [
+      -0.97861,
+      0.056872,
+      -0.197706
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；胫骨内踝区约y=0.078，在内踝后方 z=-0.048，朝内侧 -X 投射；原 +Z 法线及前方z需要纠正。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.050082,
+      0.081864,
+      0.014447
+    ],
+    "uncertainty": "内踝尖、跟腱及凹陷的精确关系尚待局部解剖审校。",
+    "landmarks": [
+      {
+        "meshId": "FJ3282",
+        "name": "Left tibia",
+        "bounds": [
+          [
+            0.0350342,
+            0.07201587000000001,
+            -0.0480179
+          ],
+          [
+            0.109455,
+            0.4519732,
+            0.014515
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3256",
+        "name": "Left calcaneus",
+        "bounds": [
+          [
+            0.04501,
+            0.009694000000000008,
+            -0.0757932
+          ],
+          [
+            0.100768,
+            0.05904000000000001,
+            -0.005858199999999994
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 27250,
+      "localReference": [
+        0.039,
+        0.078,
+        -0.048
+      ],
+      "outwardDirection": [
+        -1,
+        0,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.003758,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "PC6",
+    "name": "内关",
+    "pinyin": "Neiguan",
+    "meridian": "手厥阴心包经",
+    "position": [
+      0.2412,
+      0.925,
+      0.031444
+    ],
+    "normal": [
+      -0.107258,
+      0.137776,
+      0.984639
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；腕工程参考 y≈0.887、肘≈1.113，近端约2/12肘腕段取 y≈0.925；该横截面桡侧腕屈肌 x≈0.24585、掌长肌 x≈0.23647，选其间 x=0.2412，再向 +Z 取皮肤。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.236924,
+      0.813826,
+      0.05586
+    ],
+    "uncertainty": "真实腱间沟、骨度分寸和腕横纹尚待专家复核；此坐标仅为比旧整体缩放更合理的工程锚点。",
+    "landmarks": [
+      {
+        "meshId": "FJ1496M",
+        "name": "Left flexor carpi radialis",
+        "bounds": [
+          [
+            0.18436000000000002,
+            0.8588082,
+            -0.0291323
+          ],
+          [
+            0.272111,
+            1.1355912,
+            0.036406999999999995
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ1502M",
+        "name": "Left palmaris longus",
+        "bounds": [
+          [
+            0.179427,
+            0.8111182,
+            -0.028390600000000016
+          ],
+          [
+            0.29062,
+            1.1319112,
+            0.049692000000000014
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3277",
+        "name": "Left radius",
+        "bounds": [
+          [
+            0.219836,
+            0.8842742000000001,
+            -0.03853070000000001
+          ],
+          [
+            0.279143,
+            1.1131212,
+            0.027252
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3286",
+        "name": "Left ulna",
+        "bounds": [
+          [
+            0.196892,
+            0.8831272,
+            -0.0554477
+          ],
+          [
+            0.24712,
+            1.1305812,
+            0.023278999999999994
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 41288,
+      "localReference": [
+        0.2412,
+        0.925,
+        0.034
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.002556,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "TE5",
+    "name": "外关",
+    "pinyin": "Waiguan",
+    "meridian": "手少阳三焦经",
+    "position": [
+      0.245,
+      0.925,
+      -0.02412
+    ],
+    "normal": [
+      0.097649,
+      -0.345185,
+      -0.933441
+    ],
+    "region": "arm",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；与腕上局部参考高度 y≈0.925 对齐，在桡尺骨之间背侧工程中区 x≈0.245，投射 -Z 皮肤。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.240777,
+      0.818641,
+      -0.028893
+    ],
+    "uncertainty": "未审定背侧腕横纹及标准分寸，只保证位于前臂背侧而非手背。",
+    "landmarks": [
+      {
+        "meshId": "FJ3277",
+        "name": "Left radius",
+        "bounds": [
+          [
+            0.219836,
+            0.8842742000000001,
+            -0.03853070000000001
+          ],
+          [
+            0.279143,
+            1.1131212,
+            0.027252
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3286",
+        "name": "Left ulna",
+        "bounds": [
+          [
+            0.196892,
+            0.8831272,
+            -0.0554477
+          ],
+          [
+            0.24712,
+            1.1305812,
+            0.023278999999999994
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 41656,
+      "localReference": [
+        0.245,
+        0.925,
+        -0.02
+      ],
+      "outwardDirection": [
+        0,
+        0,
+        -1
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.00412,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "GB20",
+    "name": "风池",
+    "pinyin": "Fengchi",
+    "meridian": "足少阳胆经",
+    "position": [
+      0.033709,
+      1.540972,
+      -0.081864
+    ],
+    "normal": [
+      0,
+      0,
+      -1
+    ],
+    "region": "head",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "现有铜人示意坐标经整体尺度转换，仅供交互验证，未经过专家定位复核。",
+    "source": "https://tcm.jic.io/bronzeman"
+  },
+  {
+    "code": "GB21",
+    "name": "肩井",
+    "pinyin": "Jianjing",
+    "meridian": "足少阳胆经",
+    "position": [
+      0.083,
+      1.470624,
+      -0.061
+    ],
+    "normal": [
+      0.454091,
+      0.86032,
+      -0.231625
+    ],
+    "region": "shoulder",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；C7与肩胛骨外上区域之间，横向取 x≈0.083；沿 +Y 射线找到斜方肌覆盖的肩上皮肤，法线必须向上而不是固定向后。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.115573,
+      1.420584,
+      -0.048155
+    ],
+    "uncertainty": "起止点尚未精确分割到棘突和肩峰顶点；皮肤高度来自命中，不代表已核准连线中点。",
+    "landmarks": [
+      {
+        "meshId": "FJ3172",
+        "name": "Seventh cervical vertebra",
+        "bounds": [
+          [
+            -0.0332293,
+            1.4428212,
+            -0.0787336
+          ],
+          [
+            0.0319316,
+            1.4699512,
+            -0.009968100000000008
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3279",
+        "name": "Left scapula",
+        "bounds": [
+          [
+            0.0570614,
+            1.2620612,
+            -0.1050764
+          ],
+          [
+            0.166464,
+            1.4279711999999998,
+            0.0028450000000000003
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ1554M",
+        "name": "Transverse part of left trapezius",
+        "bounds": [
+          [
+            -0.00387271,
+            1.3817412,
+            -0.1107009
+          ],
+          [
+            0.163242,
+            1.4602211999999999,
+            -0.030346100000000015
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 32067,
+      "localReference": [
+        0.083,
+        1.446,
+        -0.061
+      ],
+      "outwardDirection": [
+        0,
+        1,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.024624,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "GB34",
+    "name": "阳陵泉",
+    "pinyin": "Yanglingquan",
+    "meridian": "足少阳胆经",
+    "position": [
+      0.133931,
+      0.417,
+      -0.026
+    ],
+    "normal": [
+      0.974772,
+      0.065126,
+      0.213491
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；腓骨头上界 y=0.43724，横截面 y≈0.430中心z≈-0.038；工程点取前下方 y=0.417,z=-0.026，沿外侧 +X 到表面。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.102089,
+      0.438214,
+      -0.004816
+    ],
+    "uncertainty": "腓骨小头前下凹陷未精确标注；体表软组织位置需要专家复核。",
+    "landmarks": [
+      {
+        "meshId": "FJ3260",
+        "name": "Left fibula",
+        "bounds": [
+          [
+            0.08452899999999999,
+            0.052920600000000005,
+            -0.051466000000000005
+          ],
+          [
+            0.120108,
+            0.43724219999999997,
+            -0.021880999999999998
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 35803,
+      "localReference": [
+        0.123,
+        0.417,
+        -0.026
+      ],
+      "outwardDirection": [
+        1,
+        0,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.010931,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "LR3",
+    "name": "太冲",
+    "pinyin": "Taichong",
+    "meridian": "足厥阴肝经",
+    "position": [
+      0.097,
+      0.066669,
+      0.047
+    ],
+    "normal": [
+      0.08403,
+      0.802308,
+      0.590966
+    ],
+    "region": "leg",
+    "midline": false,
+    "reviewed": false,
+    "positionProvenance": "BodyParts3D 局部骨/肌参考的工程区域适配；第一/第二跖骨近端 z≈0.03/0.022，取近端间隙向远端少许 z=0.047、x=0.097；足背法线应主要 +Y，不是 +Z。",
+    "source": "https://tcm.jic.io/bronzeman",
+    "originalPosition": [
+      0.063565,
+      0.057786,
+      0.110757
+    ],
+    "uncertainty": "两跖骨结合部精确触诊点未审定；足背工程位置不可用作毫米级取穴。",
+    "landmarks": [
+      {
+        "meshId": "FJ3241",
+        "name": "Left first metatarsal bone",
+        "bounds": [
+          [
+            0.074837,
+            0.01273550000000001,
+            0.029970999999999998
+          ],
+          [
+            0.104378,
+            0.05597060000000001,
+            0.09224100000000002
+          ]
+        ]
+      },
+      {
+        "meshId": "FJ3244",
+        "name": "Left second metatarsal bone",
+        "bounds": [
+          [
+            0.0905894,
+            0.0119475,
+            0.022488999999999995
+          ],
+          [
+            0.121348,
+            0.059804300000000005,
+            0.087371
+          ]
+        ]
+      }
+    ],
+    "surfaceAnchor": {
+      "meshId": "FJ2810",
+      "faceIndex": 32335,
+      "localReference": [
+        0.097,
+        0.062,
+        0.047
+      ],
+      "outwardDirection": [
+        0,
+        1,
+        0
+      ],
+      "searchSpanMeters": 0.03,
+      "distanceFromLocalReferenceMeters": 0.004669,
+      "method": "根据局部骨与肌腱标志先定区域，再沿指定体表方向作短射线，取首先命中的外层皮肤；不是全身近邻吸附。"
+    }
+  },
+  {
+    "code": "GV14",
+    "name": "大椎",
+    "pinyin": "Dazhui",
+    "meridian": "督脉",
+    "position": [
+      0.0,
+      1.43503,
+      -0.096311
+    ],
+    "normal": [
+      0,
+      0,
+      -1
+    ],
+    "region": "shoulder",
+    "midline": true,
+    "reviewed": false,
+    "positionProvenance": "现有铜人示意坐标经整体尺度转换，仅供交互验证，未经过专家定位复核。",
+    "source": "https://tcm.jic.io/bronzeman"
+  },
+  {
+    "code": "CV12",
+    "name": "中脘",
+    "pinyin": "Zhongwan",
+    "meridian": "任脉",
+    "position": [
+      0.0,
+      1.12202,
+      0.107868
+    ],
+    "normal": [
+      0,
+      0,
+      1
+    ],
+    "region": "abdomen",
+    "midline": true,
+    "reviewed": false,
+    "positionProvenance": "现有铜人示意坐标经整体尺度转换，仅供交互验证，未经过专家定位复核。",
+    "source": "https://tcm.jic.io/bronzeman"
+  }
+]

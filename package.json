@@ -1,15 +1,16 @@
 {
-  "name": "anatomy-studio",
+  "name": "tcm-bronzeman-teaching",
   "version": "0.1.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vite --host 0.0.0.0 --port 3016",
+    "dev": "vite --host 127.0.0.1 --port 3016",
     "build": "vite build",
     "build:vercel": "vite build",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "build:tcm": "vite build --base=/3d/ --outDir ../dist-tcm"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

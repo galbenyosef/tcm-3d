@@ -33,3 +33,5 @@ This is a reference assembly with whole-body surface and selected organs, includ
 本地中医教学界面基于 ashemag / Human Atlas（MIT）改编。原始代码版权声明和许可全文见 [CODE-LICENSE.txt](CODE-LICENSE.txt)，代码来源：https://github.com/ashemag/human-atlas 。
 
 本项目新增中文界面、穴位工程覆盖层、六种工具几何、肤色/程序纹理、皮肤接触反应示意及教学控制。上述视觉适配没有完成医学逐穴定位校核，也没有改变人体数据的独立 CC BY 4.0 许可。
+
+2026-09-07：增加十四经穴目录与分段体表经脉示意。种子坐标来自本项目旧 PressPoints 铜人，经区域参考适配及几何吸附；未经医学逐穴审核。课堂体表对男性外生殖器轮廓作局部平滑压缩，原始模型资产保持不变；简化区域不用于精细解剖或取穴。龈交仅收录目录，不放置外皮肤标记。

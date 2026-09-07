@@ -1,11 +1,14 @@
 import type {PainSelection} from './pain-relations';
+import rawMeridians from './meridians.json';
 import rawPoints from './teaching-points.json';
 import type {SystemId} from './anatomy';
 export type ToolId='needle'|'moxa'|'stone'|'finger'|'scraper'|'cup';
 export type Vec3=[number,number,number];
 export type RegionId='head'|'shoulder'|'arm'|'abdomen'|'waist'|'leg';
-export interface TeachingPoint {code:string;name:string;pinyin:string;meridian:string;position:Vec3;normal:Vec3;region:RegionId;midline:boolean;reviewed:boolean;source:string;positionProvenance:string}
+export const MERIDIANS=rawMeridians;
+export interface TeachingPoint {meridianId:string;surfaceUnavailable?:boolean;code:string;name:string;pinyin:string;meridian:string;position:Vec3;normal:Vec3;region:RegionId;midline:boolean;reviewed:boolean;source:string;positionProvenance:string}
 export const POINTS=rawPoints as TeachingPoint[];
+export const POINT_BY_CODE=new Map(POINTS.map(p=>[p.code,p]));
 export const STANDARD='https://zynj.shutcm.edu.cn/_upload/article/files/66/b4/b34a95604d04b0bf686251b2d317/368ea8b0-187c-48a7-a402-ffdf1e11bb99.pdf';
 export const TOOLS:{id:ToolId;name:string;verb:string;effect:string;color:string;note:string}[]=[
  {id:'needle',name:'针',verb:'针刺动作演示',effect:'进针动作与局部反馈',color:'#687d94',note:'展示针具朝向与接触位置；不提供真人进针深度或角度。'},
@@ -33,7 +36,7 @@ export const LOCATION:Record<string,{text:string;section:string}>={
 };
 export interface SurfaceTarget {position:Vec3;normal:Vec3;meshId?:string;faceIndex?:number|null}
 export type ToolDragPhase='start'|'move'|'end'|'cancel';
-export interface SimulationState {pain?:PainSelection;tool:ToolId;release?:number;dragging?:boolean;running:boolean;elapsed:number;amplitude:number;pointCode:string|null;side:1|-1;customTarget:SurfaceTarget|null;focus:number;showPoints:boolean;pickMode:'point'|'pain'|'anatomy';effects:boolean}
-export const initialSimulation:SimulationState={tool:'needle',running:false,elapsed:0,amplitude:.55,pointCode:'ST36',side:1,customTarget:null,focus:0,showPoints:true,pickMode:'point',effects:true};
-export function pointTarget(code:string,side:1|-1):SurfaceTarget{const p=POINTS.find(p=>p.code===code)!;return {position:[p.midline?p.position[0]:p.position[0]*side,p.position[1],p.position[2]],normal:[p.normal[0]*side,p.normal[1],p.normal[2]]};}
+export interface SimulationState {showMeridians?:boolean;meridianFilter?:string;pain?:PainSelection;tool:ToolId;release?:number;dragging?:boolean;running:boolean;elapsed:number;amplitude:number;pointCode:string|null;side:1|-1;customTarget:SurfaceTarget|null;focus:number;showPoints:boolean;pickMode:'point'|'pain'|'anatomy';effects:boolean}
+export const initialSimulation:SimulationState={showMeridians:true,meridianFilter:'all',tool:'needle',running:false,elapsed:0,amplitude:.55,pointCode:'ST36',side:1,customTarget:null,focus:0,showPoints:true,pickMode:'point',effects:true};
+export function pointTarget(code:string,side:1|-1):SurfaceTarget{const p=POINT_BY_CODE.get(code)!;return {position:[p.midline?p.position[0]:p.position[0]*side,p.position[1],p.position[2]],normal:[p.normal[0]*side,p.normal[1],p.normal[2]]};}
 export function classifyRegion(p:Vec3):RegionId{return p[1]>1.52?'head':p[1]>1.3?'shoulder':Math.abs(p[0])>.18?'arm':p[1]>.8?(p[2]<-.025?'waist':'abdomen'):'leg';}

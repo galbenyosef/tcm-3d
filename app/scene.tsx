@@ -1,3 +1,4 @@
+import {softenPelvicSurface} from './teaching-skin';
 import {publicAssetUrl} from './public-assets';
 import {useEffect,useRef} from 'react';
 import * as T from 'three';
@@ -98,7 +99,7 @@ export default function AnatomyScene({atlas,state,onSelect,onProgress,onError,si
     const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(buffer,p.positions,p.vertexCount*3),3));
     // GPU normalized signed-short normals keep the complete atlas compact in memory.
     g.setAttribute('normal',new T.BufferAttribute(new Int16Array(buffer,p.normals,p.vertexCount*3),3,true));g.setIndex(new T.BufferAttribute(new Uint32Array(buffer,p.indices,p.indexCount),1));
-    if(p.system==='integumentary')g.computeVertexNormals();
+    if(p.id==='FJ2810')softenPelvicSurface(g);else if(p.system==='integumentary')g.computeVertexNormals();
     g.boundingBox=bounds[i].clone();g.computeBoundingSphere();const pick=new T.Mesh(g);pick.matrixAutoUpdate=false;pickers[i]=pick;geometries.push(g);
     g.setAttribute('partIndex',new T.BufferAttribute(new Float32Array(p.vertexCount).fill(i),1));
     const list=groups.get(p.system)??[];list.push(g);groups.set(p.system,list);
@@ -125,7 +126,7 @@ export default function AnatomyScene({atlas,state,onSelect,onProgress,onError,si
    if(amount<.002&&sim.current.pickMode!=='anatomy'){
     const skin=pickers[skinIndex];const skinHit=skin?raycaster.intersectObject(skin,false)[0]:undefined;
     if(sim.current.pickMode==='pain'){if(skinHit){const normal=(skinHit.face?.normal.clone()??new T.Vector3(0,0,1)).transformDirection(skin!.matrixWorld);if(normal.dot(raycaster.ray.direction)>0)normal.negate();surfaceSelect.current({position:skinHit.point.toArray() as [number,number,number],normal:normal.toArray() as [number,number,number],meshId:'FJ2810',faceIndex:skinHit.faceIndex});}return;}
-    if(sim.current.showPoints){const dotHit=raycaster.intersectObjects(teaching.markers,false).find(h=>!skinHit||h.distance<=skinHit.distance+.025);if(dotHit){pointSelect.current(dotHit.object.userData.point,dotHit.object.userData.side);return;}}
+    if(sim.current.showPoints){const dotHit=raycaster.intersectObjects(teaching.markers.filter(m=>m.visible),false).find(h=>!skinHit||h.distance<=skinHit.distance+.025);if(dotHit){pointSelect.current(dotHit.object.userData.point,dotHit.object.userData.side);return;}}
     return;
    }
    let nearest=Infinity,found=-1;const hasSolid=atlas.parts.some((p,i)=>p.system!=='integumentary'&&data[i*4+3]>.5);

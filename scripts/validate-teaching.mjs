@@ -31,7 +31,7 @@ try {
   const bundlePath = join(temporaryDir, 'entry.mjs');
   const bundle = await build({
     stdin: {
-      contents: "export {createTeachingOverlay} from './app/teaching-overlay'; export {POINTS,TOOLS,pointTarget,initialSimulation} from './app/teaching'; export {PAIN_CASES,matchPainRegion} from './app/pain-relations';",
+      contents: "export {createTeachingOverlay} from './app/teaching-overlay'; export {softenPelvicSurface} from './app/teaching-skin'; export {POINTS,TOOLS,pointTarget,initialSimulation} from './app/teaching'; export {PAIN_CASES,matchPainRegion} from './app/pain-relations';",
       resolveDir: project, sourcefile: 'validate-teaching-entry.ts', loader: 'ts',
     },
     bundle: true, platform: 'node', format: 'esm', target: 'node22',
@@ -45,7 +45,7 @@ try {
       return {className: '', hidden: false, style: {}, dataset: {}, textContent: '', setAttribute() {}, remove() {}};
     }},
   });
-  const {createTeachingOverlay, POINTS, TOOLS, pointTarget, initialSimulation,PAIN_CASES,matchPainRegion} = await import(pathToFileURL(bundlePath));
+  const {createTeachingOverlay, softenPelvicSurface, POINTS, TOOLS, pointTarget, initialSimulation,PAIN_CASES,matchPainRegion} = await import(pathToFileURL(bundlePath));
   const camera = new T.PerspectiveCamera(34, 1.6, 0.005, 100);
   camera.position.set(0, 0.85, 4);
   camera.lookAt(0, 0.85, 0);
@@ -70,7 +70,7 @@ try {
 
   await test('穴位数据及左右镜像、中线单实例', () => {
     assert.equal(new Set(POINTS.map(point => point.code)).size, POINTS.length);
-    assert.equal(overlay.markers.length, POINTS.reduce((total, point) => total + (point.midline ? 1 : 2), 0));
+    assert.equal(overlay.markers.length, POINTS.filter(p=>!p.surfaceUnavailable).reduce((total, point) => total + (point.midline ? 1 : 2), 0));
     for (const point of POINTS) {
       finiteVector(point.position); finiteVector(point.normal);
       assert.ok(new T.Vector3().fromArray(point.normal).length() > 0);
@@ -79,7 +79,7 @@ try {
       near(left.position[1], right.position[1]); near(left.position[2], right.position[2]);
       near(left.normal[0], -right.normal[0]);
       const dots = overlay.markers.filter(dot => dot.userData.point === point.code);
-      assert.equal(dots.length, point.midline ? 1 : 2);
+      assert.equal(dots.length, point.surfaceUnavailable ? 0 : point.midline ? 1 : 2);
       if (point.midline) near(right.position[0], 0);
       for (const dot of dots) assert.deepEqual(dot.position.toArray(), pointTarget(point.code, dot.userData.side).position);
     }
@@ -360,7 +360,7 @@ try {
   const geometry = new T.BufferGeometry();
   geometry.setAttribute('position', new T.BufferAttribute(new Float32Array(buffer, skinPart.positions, skinPart.vertexCount * 3), 3));
   geometry.setIndex(new T.BufferAttribute(new Uint32Array(buffer, skinPart.indices, skinPart.indexCount), 1));
-  geometry.computeBoundingBox(); geometry.computeBoundingSphere();
+  softenPelvicSurface(geometry);geometry.computeBoundingBox(); geometry.computeBoundingSphere();
   // Match scene.tsx's CPU picking mesh (FrontSide, identity transform).
   const skin = new T.Mesh(geometry, new T.MeshBasicMaterial());
   skin.updateMatrixWorld(true);
@@ -395,6 +395,17 @@ try {
       missing.push({code: pointCode, side, nearestSurface: nearestSurface(seed), normalRayHitsMm: ray.intersectObject(skin, false).slice(0, 3).map(hit => +(hit.point.distanceTo(point) * 1000).toFixed(3))});
     } else anchoredTargets.push({marker, target, pointCode, side});
   }
+  await test('十四经全量目录、筛选、经脉开关及口内例外', () => {
+    assert.equal(POINTS.length,362);assert.equal(new Set(POINTS.map(p=>p.meridianId)).size,14);
+    assert.equal(POINTS.filter(p=>p.code==='GV24+').length,1);
+    assert.equal(anchored.getTarget(state({pointCode:'GV28'})),null);
+    const lines=anchored.root.getObjectByName('meridian-paths');assert.equal(lines.children.length,26);
+    for(const line of lines.children){const a=line.geometry.getAttribute('position');assert.ok(a.count>0);for(const n of a.array)assert.ok(Number.isFinite(n));for(let i=0;i<a.count;i+=2)assert.ok(new T.Vector3().fromBufferAttribute(a,i).distanceTo(new T.Vector3().fromBufferAttribute(a,i+1))<.025001);}
+    anchored.update(state({meridianFilter:'LU'}),0,camera,1280,800);
+    assert.equal(anchored.markers.filter(m=>m.visible).length,22);
+    assert.equal(lines.children.filter(l=>l.visible).length,2);
+    anchored.update(state({showMeridians:false}),0,camera,1280,800);assert.equal(lines.visible,false);
+  });
   console.log(`实际皮肤射线吸附：${anchoredTargets.length}/${anchored.markers.length} 个返回网格元数据；${skinPart.vertexCount} 顶点，${skinPart.indexCount / 3} 三角面。`);
   if (missing.length) console.log(`未吸附清单（距真实网格最近距离，仅为几何诊断）：\n${JSON.stringify(missing, null, 2)}`);
   const mismatchedTargets = anchoredTargets.flatMap(({marker, target, pointCode, side}) => {

@@ -30,6 +30,7 @@ export default function Home(){
  const [progress,setProgress]=useState(0),[error,setError]=useState('');
  const [region,setRegion]=useState<RegionId|'all'>('all'),[query,setQuery]=useState('');
  const [libraryTab,setLibraryTab]=useState<'points'|'layers'>('points');
+ const [toolsExpanded,setToolsExpanded]=useState(false);
  const [mobilePanel,setMobilePanel]=useState<'library'|'selection'|null>(null);
  const [about,setAbout]=useState(false),[holding,setHolding]=useState(false);
  const [feedback,setFeedback]=useState('选择穴位与工具，开始一次课堂演示。');
@@ -144,8 +145,9 @@ export default function Home(){
    </div>
   </aside>
 
-  <section className="tool-dock surface" aria-label="工具与演示控制">
-   <div className="dock-tools" role="group" aria-label="选择演示工具">{TOOLS.map(t=><button className={`tool-button ${simulation.tool===t.id?'selected':''}`} key={t.id} aria-pressed={simulation.tool===t.id} onClick={()=>chooseTool(t.id)} title={t.effect}><ToolGlyph tool={t.id}/><span>{t.name}</span><i/></button>)}</div>
+  <section className={`tool-dock surface ${toolsExpanded?'tools-open':''}`} aria-label="工具与演示控制">
+   <button className="mobile-tools-toggle" aria-expanded={toolsExpanded} aria-controls="tool-palette" onClick={()=>{setToolsExpanded(v=>!v);setMobilePanel(null);}}><ToolGlyph tool={tool.id}/><span>{tool.name}</span><ChevronDown size={14}/></button>
+   <div id="tool-palette" className="dock-tools" role="group" aria-label="选择演示工具">{TOOLS.map(t=><button className={`tool-button ${simulation.tool===t.id?'selected':''}`} key={t.id} aria-pressed={simulation.tool===t.id} onClick={()=>{chooseTool(t.id);setToolsExpanded(false);}} title={t.effect}><ToolGlyph tool={t.id}/><span>{t.name}</span><i/></button>)}</div>
    <div className="dock-separator"/>
    <div className="playback-controls"><button className={`play-button ${simulation.running?'playing':''}`} disabled={!canPlay} onClick={()=>simulation.running?pause():play()}>{simulation.running?<Pause size={15} fill="currentColor"/>:<Play size={15} fill="currentColor"/>}<span>{simulation.running?'暂停':'播放演示'}</span></button><div className="secondary-playback"><button className={`hold-button ${holding?'holding':''}`} disabled={!canPlay} onPointerDown={startHold} onPointerUp={endHold} onPointerCancel={endHold} onLostPointerCapture={()=>{if(heldPointer.current!==null)releaseHold();}} onKeyDown={e=>{if((e.key===' '||e.key==='Enter')&&!e.repeat&&canPlay){e.preventDefault();setHolding(true);play();}}} onKeyUp={e=>{if((e.key===' '||e.key==='Enter')&&holding){e.preventDefault();releaseHold();}}} onBlur={()=>{if(holding)pause();}}>按住演示</button><button className="replay-button" disabled={!canPlay} onClick={()=>play(true)} aria-label="从头重播演示" title="从头重播"><RotateCcw size={14}/></button></div></div>
   </section>

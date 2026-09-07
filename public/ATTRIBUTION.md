@@ -30,6 +30,8 @@ This is a reference assembly with whole-body surface and selected organs, includ
 
 ## 中医教学台的代码适配
 
+头皮取穴展示隐藏独立头发网格（FJ2813），露出原有头皮及其穴位标记；原始模型资产不变。
+
 本地中医教学界面基于 ashemag / Human Atlas（MIT）改编。原始代码版权声明和许可全文见 [CODE-LICENSE.txt](CODE-LICENSE.txt)，代码来源：https://github.com/ashemag/human-atlas 。
 
 本项目新增中文界面、穴位工程覆盖层、六种工具几何、肤色/程序纹理、皮肤接触反应示意及教学控制。上述视觉适配没有完成医学逐穴定位校核，也没有改变人体数据的独立 CC BY 4.0 许可。

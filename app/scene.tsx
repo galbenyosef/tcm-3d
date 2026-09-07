@@ -134,7 +134,7 @@ export default function AnatomyScene({atlas,state,onSelect,onProgress,onError,si
    if(found<0&&amount>.45)found=findTarget(e.clientX-rect.left,e.clientY-rect.top,e.pointerType==='touch'?24:16);if(found>=0){hover.hidden=true;select.current(atlas.parts[found].id);}
   };
   renderer.domElement.addEventListener('pointerdown',down);renderer.domElement.addEventListener('pointermove',move);renderer.domElement.addEventListener('pointerup',up);renderer.domElement.addEventListener('pointercancel',cancel);
-  const toolInput=installSurfaceToolInput({canvas:renderer.domElement,handle:teaching.label,camera,controls,getSkin:()=>pickers[skinIndex],getSimulation:()=>sim.current,getState:()=>latest.current,isReady:()=>ready,getAmount:()=>amount,getTarget:teaching.getTarget,getDraggables:teaching.getDraggables,onDrag:(target,phase)=>toolDrag.current(target,phase),invalidate:()=>{dirty=true;}});
+  const toolInput=installSurfaceToolInput({canvas:renderer.domElement,handle:teaching.label,camera,controls,getSkin:()=>pickers[skinIndex],getSimulation:()=>sim.current,getState:()=>latest.current,isReady:()=>ready,getAmount:()=>amount,getTarget:teaching.getTarget,getDraggables:teaching.getDraggables,snapTarget:teaching.snapTarget,onDrag:(target,phase)=>toolDrag.current(target,phase),invalidate:()=>{dirty=true;}});
   const clock=new T.Clock();let lastExtent=-1;
   const animate=()=>{
    if(disposed)return;frame=requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.05),s=latest.current;toolInput.update();

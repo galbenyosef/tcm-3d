@@ -9,6 +9,7 @@ interface Options {
  getSkin:()=>T.Mesh|undefined;getSimulation:()=>SimulationState;getState:()=>SceneState;
  isReady:()=>boolean;getAmount:()=>number;
  getTarget:(s:SimulationState)=>SurfaceTarget|null;getDraggables:(s:SimulationState['tool'])=>T.Object3D[];
+ snapTarget:(target:SurfaceTarget)=>SurfaceTarget;
  onDrag:(target:SurfaceTarget|null,phase:ToolDragPhase)=>void;invalidate:()=>void;
 }
 /** Own complete tool pointer sequences before OrbitControls sees their pointerdown. */
@@ -23,7 +24,9 @@ export function installSurfaceToolInput(o:Options){
  const targetAt=(x:number,y:number):SurfaceTarget|null=>{
   const skin=o.getSkin();if(!skin||!setRay(x,y))return null;const hit=ray.intersectObject(skin,false)[0];if(!hit)return null;
   const normal=(hit.face?.normal.clone()??new T.Vector3(0,0,1)).transformDirection(skin.matrixWorld);if(normal.dot(ray.ray.direction)>0)normal.negate();
-  return {position:hit.point.toArray() as [number,number,number],normal:normal.toArray() as [number,number,number],meshId:'FJ2810',faceIndex:hit.faceIndex};
+  const target={position:hit.point.toArray() as [number,number,number],normal:normal.toArray() as [number,number,number],meshId:'FJ2810',faceIndex:hit.faceIndex};
+  const simulation=o.getSimulation();
+  return simulation.pickMode==='point'&&simulation.showPoints?o.snapTarget(target):target;
  };
  const toolAt=(x:number,y:number)=>{
   if(!canDrag()||!setRay(x,y))return false;const hit=ray.intersectObjects(o.getDraggables(o.getSimulation().tool),false)[0];if(!hit)return false;

@@ -34,7 +34,7 @@ export const LOCATION:Record<string,{text:string;section:string}>={
  BL40:{text:'膝后区，腘横纹中点。',section:'5.7.40'},
  KI1:{text:'足底，屈足卷趾时足心最凹陷中；须结合体位和标准注释定位。',section:'5.8.1'},
 };
-export interface SurfaceTarget {position:Vec3;normal:Vec3;meshId?:string;faceIndex?:number|null}
+export interface SurfaceTarget {position:Vec3;normal:Vec3;meshId?:string;faceIndex?:number|null;pointCode?:string;pointSide?:1|-1}
 export type ToolDragPhase='start'|'move'|'end'|'cancel';
 export interface SimulationState {showMeridians?:boolean;meridianFilter?:string;pain?:PainSelection;tool:ToolId;release?:number;dragging?:boolean;running:boolean;elapsed:number;amplitude:number;pointCode:string|null;side:1|-1;customTarget:SurfaceTarget|null;focus:number;showPoints:boolean;pickMode:'point'|'pain'|'anatomy';effects:boolean}
 export const initialSimulation:SimulationState={showMeridians:true,meridianFilter:'all',tool:'needle',running:false,elapsed:0,amplitude:.55,pointCode:'ST36',side:1,customTarget:null,focus:0,showPoints:true,pickMode:'point',effects:true};

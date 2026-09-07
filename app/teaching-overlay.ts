@@ -30,6 +30,19 @@ export function createTeachingOverlay(scene:T.Scene,useBaked=true){
  const meridianRoot=new T.Group();meridianRoot.name='meridian-paths';root.add(meridianRoot);
  const pointMaterials=new Map(MERIDIANS.map(m=>[m.id,new T.MeshStandardMaterial({color:m.color,roughness:.4})]));
  const getTarget=(s:SimulationState):SurfaceTarget|null=>s.pointCode&&POINT_BY_CODE.get(s.pointCode)?.surfaceUnavailable?null:s.customTarget??(s.pointCode?resolvePoint(s.pointCode,s.side):pain.target(s.pain));
+ const snapTarget=(target:SurfaceTarget,maxDistance=.018):SurfaceTarget=>{
+  let best=maxDistance*maxDistance,match:{code:string;side:1|-1;target:SurfaceTarget}|null=null;
+  const position=new T.Vector3().fromArray(target.position),normal=new T.Vector3().fromArray(target.normal).normalize();
+  for(const [key,candidate] of surface){
+   const candidateNormal=new T.Vector3().fromArray(candidate.normal).normalize();
+   if(normal.dot(candidateNormal)<.35)continue;
+   const distance=position.distanceToSquared(new T.Vector3().fromArray(candidate.position));
+   if(distance>=best)continue;
+   const separator=key.lastIndexOf(':'),code=key.slice(0,separator),side=Number(key.slice(separator+1)) as 1|-1;
+   best=distance;match={code,side,target:candidate};
+  }
+  return match?{...match.target,pointCode:match.code,pointSide:match.side}:target;
+ };
  const anchor=(skin:T.Mesh)=>{
   if(anchored)return;skinSurface=skin;skin.updateMatrixWorld(true);pain.anchor(skin);
   if(useBaked&&baked.points.length){for(const dot of markers){const entry=baked.points.find(p=>p.key===`${dot.userData.point}:${dot.userData.side}`);if(!entry)continue;const target=entry.target as SurfaceTarget;surface.set(entry.key,target);dot.position.fromArray(target.position).addScaledVector(new T.Vector3().fromArray(target.normal),.003);}for(const path of baked.paths){const line=new T.LineSegments(new T.BufferGeometry().setAttribute('position',new T.Float32BufferAttribute(path.vertices,3)),new T.LineBasicMaterial({color:MERIDIANS.find(m=>m.id===path.id)!.color,transparent:true,opacity:.7}));line.userData.meridian=path.id;meridianRoot.add(line);}anchored=true;return;}
@@ -96,5 +109,5 @@ export function createTeachingOverlay(scene:T.Scene,useBaked=true){
  };
 
  const getDraggables=(tool:ToolId)=>{const meshes:T.Object3D[]=[];instruments.get(tool)?.traverseVisible(o=>{if(o instanceof T.Mesh)meshes.push(o);});return meshes;};
- return {root,markers,label,anchor,update,focus,getTarget,getDraggables,exportSurface:()=>({points:[...surface].map(([key,target])=>({key,target})),paths:meridianRoot.children.map(o=>({id:o.userData.meridian as string,vertices:Array.from(((o as T.LineSegments).geometry.getAttribute('position').array))}))}),dispose:()=>{pain.dispose();pointMaterials.forEach(m=>m.dispose());meridianRoot.children.forEach(o=>{const l=o as T.LineSegments;l.geometry.dispose();(l.material as T.Material).dispose();});}};
+ return {root,markers,label,anchor,update,focus,getTarget,getDraggables,snapTarget,exportSurface:()=>({points:[...surface].map(([key,target])=>({key,target})),paths:meridianRoot.children.map(o=>({id:o.userData.meridian as string,vertices:Array.from(((o as T.LineSegments).geometry.getAttribute('position').array))}))}),dispose:()=>{pain.dispose();pointMaterials.forEach(m=>m.dispose());meridianRoot.children.forEach(o=>{const l=o as T.LineSegments;l.geometry.dispose();(l.material as T.Material).dispose();});}};
 }

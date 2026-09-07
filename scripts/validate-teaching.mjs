@@ -436,6 +436,22 @@ try {
     assert.equal(missing.length, 0, `未吸附：${missing.map(item => `${item.code}:${item.side}`).join(', ')}`);
   });
 
+  await test('工具接近穴位时吸附并返回穴位身份，远离或反面不误选', () => {
+    for (const {target, pointCode, side} of anchoredTargets) {
+      const snapped = anchored.snapTarget({...target});
+      assert.equal(snapped.pointCode, pointCode);
+      assert.equal(snapped.pointSide, side);
+      assert.deepEqual(snapped.position, target.position);
+    }
+    const sample = anchoredTargets.find(item => item.pointCode === 'ST36' && item.side === 1);
+    assert.ok(sample);
+    const position = new T.Vector3().fromArray(sample.target.position).addScaledVector(new T.Vector3().fromArray(sample.target.normal), .03);
+    const distant = {...sample.target, position: position.toArray(), pointCode: undefined, pointSide: undefined};
+    assert.equal(anchored.snapTarget(distant), distant);
+    const reversed = {...sample.target, normal: new T.Vector3().fromArray(sample.target.normal).negate().toArray(), pointCode: undefined, pointSide: undefined};
+    assert.equal(anchored.snapTarget(reversed), reversed);
+  });
+
   await test('中线负侧选择仍使用唯一中线吸附结果', () => {
     for (const point of POINTS.filter(point => point.midline)) {
       assert.deepEqual(anchored.getTarget(state({pointCode: point.code, side: -1})), anchored.getTarget(state({pointCode: point.code, side: 1})));

@@ -36,6 +36,7 @@ export default function Home(){
  const [feedback,setFeedback]=useState('选择穴位与工具，开始一次课堂演示。');
  const dialog=useRef<HTMLDialogElement>(null),searchInput=useRef<HTMLInputElement>(null);
  const heldPointer=useRef<number|null>(null);
+ const draggedPoint=useRef<{code:string;name:string}|null>(null);
  const point=POINTS.find(p=>p.code===simulation.pointCode);
  const tool=TOOLS.find(t=>t.id===simulation.tool)!;
  const hasTarget=!!point||!!simulation.customTarget||!!simulation.pain?.topic||!!simulation.pain?.target;
@@ -65,9 +66,9 @@ export default function Home(){
  const chooseRelatedPoint=(code:string)=>{relationOverview();setSimulation(s=>({...s,pointCode:code,customTarget:null,side:s.pain?.side??s.side,pickMode:'point',elapsed:0}));setFeedback(`已选择${POINTS.find(p=>p.code===code)!.name}，保留原痛处；连线说明关联，不代表必然止痛。`);};
  const clearPain=()=>{pause();setSimulation(s=>({...s,pain:undefined,pickMode:'point'}));setFeedback('已退出疼痛关联，恢复普通穴位与工具演示。');};
  const onToolDrag=useCallback((target:SurfaceTarget|null,phase:ToolDragPhase)=>{
-  if(phase==='start'){setState(s=>({...s,rotate:false}));setSimulation(s=>({...s,dragging:true,running:true,elapsed:Math.max(.01,s.elapsed)}));setFeedback('正在操作工具：拖动时镜头保持，松开停在当前位置。');}
-  else if(phase==='move'&&target){setSimulation(s=>({...s,customTarget:target,pointCode:null,pickMode:'point',dragging:true}));}
-  else if(phase==='end'||phase==='cancel'){setSimulation(s=>({...s,dragging:false,running:false,release:(s.release??0)+1}));setFeedback(phase==='cancel'?'工具移动已结束，已恢复人体旋转。':'工具已停在新的皮肤位置，可继续拖动或播放演示。');}
+  if(phase==='start'){draggedPoint.current=null;setState(s=>({...s,rotate:false}));setSimulation(s=>({...s,dragging:true,running:true,elapsed:Math.max(.01,s.elapsed)}));setFeedback('正在操作工具：拖到穴位附近可自动选中。');}
+  else if(phase==='move'&&target){const selected=target.pointCode?POINTS.find(p=>p.code===target.pointCode):null;draggedPoint.current=selected?{code:selected.code,name:selected.name}:null;setSimulation(s=>selected?{...s,customTarget:null,pointCode:selected.code,side:selected.midline?1:(target.pointSide??s.side),pickMode:'point',dragging:true}:{...s,customTarget:target,pointCode:null,pickMode:'point',dragging:true});}
+  else if(phase==='end'||phase==='cancel'){setSimulation(s=>({...s,dragging:false,running:false,release:(s.release??0)+1}));const selected=draggedPoint.current;setFeedback(phase==='cancel'?'工具移动已结束，已恢复人体旋转。':selected?`已选中${selected.name} ${selected.code}，可继续演示。`:'工具已停在新的皮肤位置，可继续拖动或播放演示。');draggedPoint.current=null;}
  },[]);
  const onSelect=(id:string)=>{pause();setState(s=>({...s,selected:[id],rotate:false,isolate:false}));setFeedback('已选择解剖结构，可查看所属系统或单独观察。');};
  const toggleLayer=(id:SystemId)=>{pause('解剖层已更新，演示暂停。');setState(s=>({...s,selected:[],isolate:false,visible:s.visible.includes(id)?s.visible.filter(v=>v!==id):[...s.visible,id]}));};
